@@ -1,4 +1,4 @@
-bitsocket = new EventSource('http://bitsocket.bch.sx/s/ewogICJ2IjogMywKICAicSI6IHsKICAgICJmaW5kIjoge30KICB9Cn0=');
+bitsocket = new EventSource('https://bitsocket.bch.sx/s/ewogICJ2IjogMywKICAicSI6IHsKICAgICJmaW5kIjoge30KICB9Cn0=');
 bitsocket.onopen = function(e) {
     document.querySelector("#loading i.spinner").classList.add("fa-spin")
     document.querySelector("#loading .msg").innerHTML = "Listening for transactions"

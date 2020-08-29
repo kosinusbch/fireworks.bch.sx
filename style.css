@@ -5,6 +5,7 @@ html, body {
     color: #444444;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 *, ::after, ::before {
@@ -49,10 +50,13 @@ a {
 
 #stream {
     background: #E3E8EE;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    padding: 2px 0px 0px 0px;
     height: 35vh;
     align-self: end;
+    border: 1px solid #474747;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.01);
 }
 
 #stream #header {

@@ -56,7 +56,7 @@ const v = 0.3;
 		brd.appendChild(fwkSed);
 		fwkSed.time = fwkSedIniT;
 		fwkSed.velocity = [];
-		fwkSed.velocity.x = 0;
+		fwkSed.velocity.x = Math.random() < 0.5 ? 0.02 : -0.02;
 		fwkSed.velocity.y = (Math.floor(Math.random() * (9 - 5 + 1) + 5) / 10)
 		fwkSed.position = [];
 		fwkSed.position.x = x;

@@ -17,7 +17,7 @@ bitsocket.onmessage = function(e) {
                 var el = document.getElementById('list'), ch = document.createElement('div');
                 ch.setAttribute('class', 'new_tx');
                 ch.setAttribute('data-timestamp', Date.now());
-                ch.innerHTML = '<b>' + event.data[0].out[i].e.a.substring(0, 4) + '...'  + event.data[0].out[i].e.a.substring(35) + '</b> received <b>' + (event.data[0].out[i].e.v * 0.00000001).toFixed(8) + ' BCH</b>';
+                ch.innerHTML = '<b><a href="https://explorer.bitcoin.com/bch/tx/' + event.data[0].tx.h + '" target="_blank">*</a> ' + event.data[0].out[i].e.a.substring(0, 4) + '...'  + event.data[0].out[i].e.a.substring(35) + '</b> received <b>' + (event.data[0].out[i].e.v * 0.00000001).toFixed(8) + ' BCH</b>';
                 el.insertBefore(ch, el.firstChild);
             }
         }

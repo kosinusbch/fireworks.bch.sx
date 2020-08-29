@@ -1,0 +1,137 @@
+html, body {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1em;
+    background: #080909;
+    color: #444444;
+    margin: 0;
+    padding: 0;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6, p, span {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    font-weight: 500;
+    text-decoration: none;
+    color: #5469d4;
+}
+
+.container {
+    margin: auto;
+    display: grid;
+    grid-template-rows: 80px 1fr;
+    grid-template-columns: 75%;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    position: relative;
+}
+
+.led {
+    margin-top: 30px;
+}
+
+.transaction {
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    animation: FadeIn 0.75s ease-in-out forwards;
+}
+
+.msg {
+    margin: 0px 0px 0px 10px;
+}
+
+#stream {
+    background: #E3E8EE;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    height: 35vh;
+    align-self: end;
+}
+
+#stream #header {
+    text-align: left;
+    padding: 10px;
+}
+
+#stream #list {
+    max-height: 50vh;
+    width: 100%;
+    overflow: scroll;
+    height: 25vh;
+    font-family: monospace;
+}
+
+/* Stolen from https://shenhuang.github.io/demo_projects/fireworkdemo.html */
+
+@keyframes firework-animation {
+    0% {background-color : #ff8426;}
+    25% {background-color : #fffc84;}
+    50% {background-color : #ff83f4;}
+    75% {background-color : #83b6ff;}
+    100% {background-color : #ff8426;}
+}
+@-webkit-keyframes firework-animation {
+    0% {background-color : #ff8426;}
+    25% {background-color : #fffc84;}
+    50% {background-color : #ff83f4;}
+    75% {background-color : #83b6ff;}
+    100% {background-color : #ff8426;}
+}
+@keyframes firework-seed-animation	{
+    0% {background-color : #ff8426;}
+    25% {background-color : #fffc84;}
+    100% {background-color : #ff8426;}
+}
+@-webkit-keyframes firework-seed-animation	{
+    0% {background-color : #ff8426;}
+    25% {background-color : #fffc84;}
+    100% {background-color : #ff8426;}
+}
+@keyframes firework-fade-animation {
+    0% {opacity : 1;}
+    50% {opacity : 1;}
+    100% {opacity : 0;}
+}
+@-webkit-keyframes firework-fade-animation {
+    0% {opacity : 1;}
+    50% {opacity : 1;}
+    100% {opacity : 0;}
+}
+.fireWorkBatch {
+    z-index : 999;
+    position : absolute;
+    top : 0px;
+    left : 0px;
+    animation-name : firework-fade-animation;
+    animation-timing-function : cubic-bezier(0.5, 0, 1. 1);
+    animation-duration : 2.5s;
+}
+.fireWorkParticle {
+    z-index : 999;
+    position : absolute;
+    height : 5px;
+    width : 5px;
+    border-radius : 50px;
+    animation-name : firework-animation;
+    animation-timing-function : linear;
+    animation-duration : 5s;
+    animation-iteration-count : infinite;
+}
+.fireWorkSeed {
+    z-index : 999;
+    position : absolute;
+    height : 5px;
+    width : 5px;
+    border-radius : 50px;
+    animation-name : firework-seed-animation;
+    animation-timing-function : linear;
+    animation-duration : 5s;
+    animation-iteration-count : infinite;
+}

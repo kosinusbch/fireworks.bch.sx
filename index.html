@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BCH Fireworks</title>
+        <link rel="stylesheet" type="text/css" href="/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id = "board"></div>
+        <div class="container">
+            <h1 style="margin: 2vh 0px 1vh 0px;color: var(--white);">BCH Fireworks</h1>
+            <p style="margin: -1vh 0px 1vh 0px;color: var(--white);">Powered by <a target="_blank" href="https://bitsocket.bch.sx">Bitsocket Fountainhead</a>.</p>
+            <div id="stream">
+                <div id="header">TRANSACTIONS</div>
+                <div><span class="led"><div id="loading" style="margin-bottom: 10px"><i class="fas fa-power-off spinner"></i></span><span class="msg">Connecting to Bitsocket..</span></div>
+                <div id="list"></div>
+            </div>
+        </div>
+        <script src="fireworks.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>

@@ -27,6 +27,11 @@
                         el.remove()
                     }
                 });
+                document.querySelectorAll('.new_tx').forEach(function(el) {
+                    if(el.dataset.timestamp && el.dataset.timestamp < (Date.now() - 40000)) {
+                        el.remove()
+                    }
+                });
             }, 1000);
         </script>
     </body>

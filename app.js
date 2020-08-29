@@ -15,7 +15,11 @@ bitsocket.onmessage = function(e) {
             var wmin = (screen.width * 0.2);
             if(event.data[0].out[i] && event.data[0].out[i].e && event.data[0].out[i].e.a) {
                 if(i < 3) newFireworkSeed(Math.floor(Math.random() * (wmax - wmin + 1) + wmin), (screen.height - (document.getElementById('stream').offsetHeight * 1.37)));
-                list.innerHTML = '<b>' + event.data[0].out[i].e.a.substring(0, 4) + '...'  + event.data[0].out[i].e.a.substring(35) + '</b> received <b>' + (event.data[0].out[i].e.v * 0.00000001).toFixed(8) + ' BCH</b><br/>' + list.innerHTML;
+                var el = document.getElementById('list'), ch = document.createElement('div');
+                ch.setAttribute('class', 'new_tx');
+                ch.setAttribute('data-timestamp', Date.now());
+                ch.innerHTML = '<b>' + event.data[0].out[i].e.a.substring(0, 4) + '...'  + event.data[0].out[i].e.a.substring(35) + '</b> received <b>' + (event.data[0].out[i].e.v * 0.00000001).toFixed(8) + ' BCH</b>';
+                el.insertBefore(ch, el.firstChild);
             }
         }
     }

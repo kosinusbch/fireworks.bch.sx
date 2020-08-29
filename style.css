@@ -68,6 +68,19 @@ a {
     font-family: monospace;
 }
 
+@keyframes highlight {
+    0%  {background-color: #ffd601;}
+    100.0%  {background-color: #ccd0d5;}
+}
+
+#stream #list .new_tx {
+    background: #ccd0d5;
+    padding: 5px;
+    animation-name: highlight;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
 /* Stolen from https://shenhuang.github.io/demo_projects/fireworkdemo.html */
 
 @keyframes firework-animation {

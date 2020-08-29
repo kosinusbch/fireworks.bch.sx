@@ -10,7 +10,6 @@ bitsocket.onmessage = function(e) {
         // The transaction itself is stored in event.data[0]
 
         for (var i = 0; i < event.data[0].out.length; i++) {
-            var list = document.getElementById('list');
             var wmax = (screen.width * 0.8);
             var wmin = (screen.width * 0.2);
             if(event.data[0].out[i] && event.data[0].out[i].e && event.data[0].out[i].e.a) {

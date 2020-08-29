@@ -17,6 +17,7 @@ const v = 0.3;
 		var fwkPtc = document.createElement("DIV");
 		fwkPtc.setAttribute('class', 'fireWorkParticle');
 		fwkPtc.time = fwkPtcIniT;
+		
 		while(angle > 360)
 		angle -= 360;
 		while(angle < 0)
@@ -71,6 +72,8 @@ const v = 0.3;
 	function newFireWorkStar(x, y) {
 		var fwkBch = document.createElement("DIV");
 		fwkBch.setAttribute('class', 'fireWorkBatch');
+		fwkBch.setAttribute('data-timestamp', Date.now());
+
 		var a = 0;
 		while(a < 360) {
             var fwkPtc = newFireworkParticle(x, y, a);

@@ -6,20 +6,17 @@ bitsocket.onopen = function(e) {
 bitsocket.onmessage = function(e) {
     var event = JSON.parse(e.data)
     if(event.type == 'mempool') {
-        // Since bch has very few tx's per minute, we'll send a firework for every output
+        // Since bch has very few tx's per minute, we'll send one firework per transaction output (3 max).
         // The transaction itself is stored in event.data[0]
 
-        event.data[0].out.forEach(async function (out) {
+        for (var i = 0; i < event.data[0].out.length; i++) {
             var list = document.getElementById('list');
             var wmax = (screen.width * 0.8);
             var wmin = (screen.width * 0.2);
-            if(out && out.e && out.e.a) {
-                console.log(out.e.a, 'received', out.e.v)
-                newFireworkSeed(Math.floor(Math.random() * (wmax - wmin + 1) + wmin), (screen.height - (document.getElementById('stream').offsetHeight * 1.37)));
-                list.innerHTML = '<b>' + out.e.a.substring(0, 4) + '...'  + out.e.a.substring(35) + '</b> received <b>' + (out.e.v * 0.00000001).toFixed(8) + ' BCH</b><br/>' + list.innerHTML;
+            if(event.data[0].out[i] && event.data[0].out[i].e && event.data[0].out[i].e.a) {
+                if(i < 3) newFireworkSeed(Math.floor(Math.random() * (wmax - wmin + 1) + wmin), (screen.height - (document.getElementById('stream').offsetHeight * 1.37)));
+                list.innerHTML = '<b>' + event.data[0].out[i].e.a.substring(0, 4) + '...'  + event.data[0].out[i].e.a.substring(35) + '</b> received <b>' + (event.data[0].out[i].e.v * 0.00000001).toFixed(8) + ' BCH</b><br/>' + list.innerHTML;
             }
-        })
-    } else if(event.type == 'open') {
-        newFireworkSeed(Math.floor(Math.random() * (wmax - wmin + 1) + wmin), (screen.height - (document.getElementById('stream').offsetHeight * 1.37)));
+        }
     }
 }

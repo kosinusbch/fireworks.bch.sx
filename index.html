@@ -20,5 +20,14 @@
         </div>
         <script src="fireworks.js"></script>
         <script src="app.js"></script>
+        <script>
+            setInterval(() => {
+                document.querySelectorAll('.fireWorkBatch').forEach(function(el) {
+                    if(el.dataset.timestamp && el.dataset.timestamp < (Date.now() - 10000)) {
+                        el.remove()
+                    }
+                });
+            }, 1000);
+        </script>
     </body>
 </html>

@@ -81,7 +81,7 @@ const v = 0.3;
             a += 5;
 		}
 		brd.appendChild(fwkBch);
-		(new Audio('/firework.mp3')).play()
+		(new Audio('/assets/firework.mp3')).play()
 	}
 
 	var before = Date.now();

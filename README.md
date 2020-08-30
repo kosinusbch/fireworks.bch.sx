@@ -4,4 +4,4 @@ Very simple Bitcoin Cash transaction visualizer app made with Bitsocket Fountain
 
 See live at [fireworks.bch.sx](https://fireworks.bch.sx).
 
-![](demo.gif)
+![](assets/demo.gif)

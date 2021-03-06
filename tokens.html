@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SLP Fireworks</title>
+        <link rel="stylesheet" type="text/css" href="/assets/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id = "board"></div>
+        <div class="container">
+            <h1 style="margin: 2vh 0px 1vh 0px;color: #ffffff;">SLP Fireworks</h1>
+            <p style="margin: -1vh 0px 1vh 0px;color: #ffffff;">Powered by <a style="color:#0ac18e;" target="_blank" href="https://slpstream.fountainhead.cash">SLPStream Fountainhead</a>.</p>
+            <div id="stream">
+                <div id="header">SLP TRANSACTIONS</div>
+                <div><span class="led"><div id="loading" style="margin-bottom: 10px"><i class="fas fa-power-off spinner"></i></span><span class="msg">Connecting to Bitsocket..</span></div>
+                <div id="list"></div>
+            </div>
+        </div>
+        <script src="/assets/fireworks.js"></script>
+        <script src="slpsocket.js"></script>
+        <script>
+            setInterval(() => {
+                document.querySelectorAll('.fireWorkBatch').forEach(function(el) {
+                    if(el.dataset.timestamp && el.dataset.timestamp < (Date.now() - 10000)) {
+                        el.remove()
+                    }
+                });
+                document.querySelectorAll('.new_tx').forEach(function(el) {
+                    if(el.dataset.timestamp && el.dataset.timestamp < (Date.now() - 40000)) {
+                        el.remove()
+                    }
+                });
+            }, 1000);
+        </script>
+    </body>
+</html>

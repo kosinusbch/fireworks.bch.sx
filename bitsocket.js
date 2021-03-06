@@ -13,7 +13,7 @@ bitsocket.onmessage = function(e) {
             var wmax = (screen.width * 0.8);
             var wmin = (screen.width * 0.2);
             if(event.data[0].out[i] && event.data[0].out[i].e && event.data[0].out[i].e.a) {
-                if(i < 3) newFireworkSeed(Math.floor(Math.random() * (wmax - wmin + 1) + wmin), (screen.height - (document.getElementById('stream').offsetHeight * 1.37)));
+                if(i < 1) newFireworkSeed(Math.floor(Math.random() * (wmax - wmin + 1) + wmin), (screen.height - (document.getElementById('stream').offsetHeight * 1.37)));
                 var el = document.getElementById('list'), ch = document.createElement('div');
                 ch.setAttribute('class', 'new_tx');
                 ch.setAttribute('data-timestamp', Date.now());
